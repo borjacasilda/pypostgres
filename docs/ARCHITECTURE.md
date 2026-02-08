@@ -16,7 +16,7 @@ PyPostgres is designed as a lightweight, professional wrapper around psycopg2 wi
 
 ```
 ┌─────────────────────────────────────────────┐
-│         Application Layer                    │
+│         Application Layer                   │
 │  (User Code, Examples, Tests)               │
 └────────────┬────────────────────────────────┘
              │
@@ -36,17 +36,17 @@ PyPostgres is designed as a lightweight, professional wrapper around psycopg2 wi
     │  - ExcelReader    │   │
     └───────────────────┘   │
                             │
-                    ┌────────▼──────────┐
-                    │  Logger Module    │
-                    │  (Logging Setup)  │
-                    └───────────────────┘
+                    ┌───────▼──────────┐
+                    │  Logger Module   │
+                    │  (Logging Setup) │
+                    └──────────────────┘
                             │
-┌────────────────────────────▼──────────────┐
-│  Configuration Module                     │
-│  - Database Settings                      │
-│  - Logging Configuration                  │
-│  - Environment Variables                  │
-└────────────────────────────┬──────────────┘
+┌───────────────────────────▼──────────────┐
+│  Configuration Module                    │
+│  - Database Settings                     │
+│  - Logging Configuration                 │
+│  - Environment Variables                 │
+└────────────────────────────┬─────────────┘
                              │
                     ┌────────▼──────────┐
                     │   psycopg2        │
