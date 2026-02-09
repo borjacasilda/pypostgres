@@ -4,6 +4,9 @@ A production-ready Python library for interacting with PostgreSQL databases. Sup
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![Build Status](https://github.com/username/pypostgres/actions/workflows/docker.yml/badge.svg)](https://github.com/username/pypostgres/actions)
+[![Security](https://github.com/username/pypostgres/actions/workflows/security.yml/badge.svg)](https://github.com/username/pypostgres/actions)
+[![Code Quality](https://github.com/username/pypostgres/actions/workflows/quality.yml/badge.svg)](https://github.com/username/pypostgres/actions)
 
 ## ⚠️ IMPORTANT - Before You Start
 
@@ -49,7 +52,7 @@ cp .env.example .env
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/pypostgres.git
+git clone https://github.com/borjacasilda/pypostgres.git
 cd pypostgres
 ```
 
@@ -79,11 +82,11 @@ cp .env.example .env
 3. Update `.env` with YOUR credentials:
 ```env
 DB_HOST=localhost           # Your PostgreSQL server
-DB_PORT=5432               # PostgreSQL port
-DB_NAME=your_database      # Your database name
-DB_USER=your_user         # Your username
-DB_PASSWORD=your_password # Your password
-LOG_LEVEL=INFO            # Logging level
+DB_PORT=5432                # PostgreSQL port
+DB_NAME=your_database       # Your database name
+DB_USER=your_user           # Your username
+DB_PASSWORD=your_password   # Your password
+LOG_LEVEL=INFO              # Logging level
 ```
 
 4. Test the connection:
@@ -419,6 +422,40 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes (`git commit -m 'Add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+### Before Submitting a PR
+
+Ensure all checks pass locally:
+```bash
+# Format code
+black src/ tests/ examples/
+
+# Sort imports
+isort src/ tests/ examples/
+
+# Lint
+flake8 src/ tests/ examples/
+
+# Type check
+mypy src/
+
+# Run tests
+pytest tests/ -v
+```
+
+For more information, see [CI-CD.md](.github/CI-CD.md) and [CONTRIBUTING.md](CONTRIBUTING.md)
+
+## CI/CD Pipeline
+
+This project uses GitHub Actions for automated testing, security scanning, and Docker image building.
+
+### Automated Checks:
+- **Code Quality**: Black, isort, Flake8, mypy
+- **Testing**: pytest with coverage reporting
+- **Security**: Bandit, Safety, Trivy, Dependency Check
+- **Docker**: Automated image building and registry push
+
+For details, see [.github/CI-CD.md](.github/CI-CD.md)
 
 ## License
 
